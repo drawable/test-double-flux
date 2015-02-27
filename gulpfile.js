@@ -37,7 +37,7 @@ gulp.task('javascript', function() {
             .pipe(buffer())
             .pipe(sourcemaps.init({loadMaps: true}))
             // Add transformation tasks to the pipeline here.
-        //.pipe(uglify())
+            .pipe(uglify())
             .pipe(sourcemaps.write('./', { sourceRoot: "../../"}))
             .pipe(gulp.dest('./build/js/'));
     };

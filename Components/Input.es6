@@ -12,17 +12,17 @@ let InputComponent = React.createClass({
         submitInput: React.PropTypes.func
     },
 
-    handleChange: function(event) {
+    handleChange(event) {
         this.props.updateInput(event.target.value);
     },
 
-    handleKeyDown: function(event) {
+    handleKeyDown(event) {
         if (event.keyCode === 13) {
             this.props.submitInput();
         }
     },
 
-    render: function() {
+    render() {
         return React.DOM.input({ placeholder: "New Value",
                                  value: this.props.value,
                                  onChange: this.handleChange,

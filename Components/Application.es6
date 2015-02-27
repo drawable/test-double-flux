@@ -13,12 +13,12 @@ let AppComponent = React.createClass({
         ui: React.PropTypes.object
     },
 
-    componentDidMount: function() {
+    componentDidMount() {
         this.props.ui.state.allChanges.forEach(_ => this.forceUpdate());
         this.props.values.allChanges.forEach(_ => this.forceUpdate());
     },
 
-    render: function () {
+    render() {
         return React.DOM.div({},
             React.createElement(Input, {
                 value: this.props.ui.state.inputValue,
