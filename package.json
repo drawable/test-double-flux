@@ -1,0 +1,24 @@
+{
+  "name": "DoubleFluxTest",
+  "version": "0.1.0",
+  "description": "Testing the idea of two fluxes, one for the UI and one for the application",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "domready": "^1.0.7",
+    "react": "^0.12.2"
+  },
+  "devDependencies": {
+    "browserify": "^9.0.3",
+    "gulp": "^3.8.11",
+    "gulp-browserify": "^0.5.1",
+    "gulp-sourcemaps": "^1.5.0",
+    "gulp-uglify": "^1.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stephan Smola (for Drawable)",
+  "license": "ISC"
+}
