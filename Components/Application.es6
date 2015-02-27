@@ -4,8 +4,9 @@
 
 import React from 'react';
 import Input from './Input';
+import * as UI from '../UI';
 
-let Component = React.createClass({
+let AppComponent = React.createClass({
 
     propTypes: {
         values: React.PropTypes.object,
@@ -19,10 +20,18 @@ let Component = React.createClass({
 
     render: function () {
         return React.DOM.div({},
-            React.createElement(Input, { value: this.props.ui.state.inputValue }),
+            React.createElement(Input, {
+                value: this.props.ui.state.inputValue,
+                updateInput: UI.updateInput,
+                submitInput: UI.submitInput
+            }),
+            React.DOM.button({ onClick: UI.submitInput}, "Submit"),
+            React.DOM.p({},  this.props.ui.state.inputValue ?
+                                "You'll be adding '" + this.props.ui.state.inputValue + "'"
+                                : null),
             React.DOM.ol({}, this.props.values.map((value, key) => React.DOM.li({key}, value)))
         );
     }
 });
 
-export default Component;
+export default AppComponent;

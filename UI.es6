@@ -23,8 +23,13 @@ let ui;
 export function getInstance() {
     if (!ui) {
         ui = new UI();
-        ui.wrap(ACTIONS.UPDATE_INPUT, (newValue) => ui.state.inputValue = newValue);
-        ui.wrap(ACTIONS.SUBMIT_INPUT, () => Application.newValue(ui.state.inputValue));
+        ui.wrap(ACTIONS.UPDATE_INPUT,
+            (newValue) => ui.state.inputValue = newValue);
+
+        ui.wrap(ACTIONS.SUBMIT_INPUT, () => {
+            Application.newValue(ui.state.inputValue);
+            ui.state.inputValue = "";
+        });
     }
     return ui;
 }
@@ -35,5 +40,4 @@ export function updateInput(newValue) {
 
 export function submitInput() {
     ui.execute(ACTIONS.SUBMIT_INPUT);
-    ui.state.inputValue = "";
 }

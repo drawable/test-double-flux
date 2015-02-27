@@ -8,14 +8,14 @@ import * as Application from './Application';
 import * as UI from './UI';
 
 import ready from 'domready';
-import CApplication from './Components/Application';
+import AppComponent from './Components/Application';
 
 ready(() => {
 
     var app = Application.getInstance();
     var ui = UI.getInstance();
 
-    React.render(React.createElement(CApplication, { ui, values: app.values.immutable }),
+    React.render(React.createElement(AppComponent, { ui, values: app.values.immutable }),
                  document.getElementById("application")
     );
 });

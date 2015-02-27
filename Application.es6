@@ -4,8 +4,7 @@
 
 import Fluss from 'fluss';
 
-export const ACTIONS = { NEW_VALUE: null }
-Fluss.Actions.enumerate(ACTIONS);
+
 
 class Application extends Fluss.Domain {
 
@@ -15,8 +14,10 @@ class Application extends Fluss.Domain {
     }
 }
 
-let app;
+export const ACTIONS = { NEW_VALUE: null }
+Fluss.Actions.enumerate(ACTIONS);
 
+let app;
 export function getInstance() {
     if (!app) {
         app = new Application();

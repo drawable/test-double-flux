@@ -4,17 +4,21 @@
 
 import React from 'react';
 
-import * as UI from '../UI';
+let InputComponent = React.createClass({
 
-let Component = React.createClass({
+    propTypes: {
+        value: React.PropTypes.any,
+        updateInput: React.PropTypes.func,
+        submitInput: React.PropTypes.func
+    },
 
     handleChange: function(event) {
-        UI.updateInput(event.target.value);
+        this.props.updateInput(event.target.value);
     },
 
     handleKeyDown: function(event) {
         if (event.keyCode === 13) {
-            UI.submitInput();
+            this.props.submitInput();
         }
     },
 
@@ -26,4 +30,4 @@ let Component = React.createClass({
     }
 });
 
-export default Component;
+export default InputComponent;
